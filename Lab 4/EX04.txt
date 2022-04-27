@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>A Simple Form with JavaScript Validation</title>
+<script type="text/javascript">
+  const btn = document.querySelector('#btn');        
+        const radioButtons = document.querySelectorAll('input[name="size"]');
+        btn.addEventListener("click", () => {
+            let selectedSize;
+            for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+
+            output.innerText = selectedSize ? `You selected ${selectedSize}` : `You haven't selected any size`;
+        });
+function favTutorial() {  
+var mylist = document.getElementById("myList");  
+document.getElementById("favourite").value = mylist.options[mylist.selectedIndex].text;  
+}
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+</script>
+</head>
+<body bgcolor=#8A2BE2>
+    <p>What of car would u like to buy?</p>
+        <input type="radio" name="size" value="proton" id="proton">
+        <label for="proton">proton</label>
+        <input type="radio" name="size" value="honda" id="honda">
+        <label for="honda">honda</label>
+        <input type="radio" name="size" value="ferri" id="ferri">
+        <label for="ferri">ferri</label>
+        <input type="radio" name="size" value="ford" id="ford">
+        <label for="ford">ford</label>
+<form>  
+<b> What Colour do you want your car? </b>  
+<select id = "myList" onchange = "favTutorial()" >  
+<option> ---Choose Colour--- </option>  
+<option> Pink </option>  
+<option> RED </option>  
+<option> Blue </option>  
+<option> Black </option>  
+</select>  
+<p> Your selected colour is:   
+<input type = "text" id = "favourite" size = "20" </p>  
+</form>
+<label for="other">Other:</label>
+<input type="text" id="other" name="other">
+<div>...</div>
+<label for="w3review">Enter Other Spec For Prefered CAR:</label>
+<textarea id="carpref" name="carpref" rows="4" cols="50">
+</textarea>
+<h1>Tell us how to get in touch with you</h1>
+<form name="myForm" action="newhtml.html" onsubmit="return validateForm()" method="post">
+<label for="name">name:</label>
+<input type="text" id="name" name="name"><br><br>
+<label for="mail">Email:</label>
+<input type="text" id="mail" name="mail"><br><br>
+<label for="phone">Phone:</label>
+<input type="text" id="phone" name="phone"><br><br>
+<input type="checkbox" id="vehicle1" name="vehicle1" value="car">
+<label for="vehicle1">Please contact me as soon as possible</label><br>
+<div><a href="abc@gmail.com">Click to mail</a></div>
+<input type="submit" value="Submit">
+<input type="reset" value="Clear">
+</form>
+        <div class="teaserbox">
+          <h3>Events</h3>
+<marquee behavior="scroll" height=100 scrolldelay="100" direction="down" OnMouseOver="this.stop()" OnMouseOut="this.start()">
+      <p>30% OFF</p><br>
+      <p>Car For Sale @HIGE DISCOUNT</p>      <br>
+      <p></p>         <br>
+</marquee>
+        </div>
+</body>
+</html> 
