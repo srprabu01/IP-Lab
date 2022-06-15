@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+body{
+    background-color: rgb(131, 209, 243);
+}
+h1{
+    text-align: center;
+}
+
+form{
+    border: 3px double;
+    width: 80vww;
+    margin-left: 3vw;
+    padding: 2%;
+    background-color: rgb(7, 249, 189);
+}
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Registration Page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Get your favourite books here..!!</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="login.html" >Login</a>
+            <a href="#" id="currentPage">Registration</a>
+            <a href="catalogue.jsp">Catalogue</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+        <div class="container">
+            <form  id="registerForm" action="http://localhost:8080/BookShop/logincheck.jsp">
+                <h2>You're not a registered user..!!Kindly register..!!</h2>
+		Name    <input type="text" name="name"><br><br>
+                Choose a password<input type="password" name="password" id="pwd"><br><br>
+                Reenter Password  <input type="password" name="rPassword" id="rpwd" onblur="validPwd()" onfocus="resetPwd()"><br><br>
+		Phone no    <input type="number" name="phone"><br><br>
+		Mail id     <input type="email" name="email"><br><br>
+		Date of Birth   <input type="date" name="date"><br><br>
+                Address     <textarea name="address" rows="3" cols="20"></textarea><br><br>
+		<input type="submit" value="Submit" name="registerSubmit">
+		<input type="reset" value="Reset">
+
+            </form>
+        </div>
+        <script>
+            function validPwd()
+            {
+                if(document.getElementById("pwd").value!=document.getElementById("rpwd").value)
+                {
+                    document.getElementById("rpwd").type="text";
+                    document.getElementById("rpwd").value="Enter the correct password..!!";
+                    document.getElementById("rpwd").style="color:red";
+                }
+            }
+            function resetPwd(){
+                document.getElementById("rpwd").style="color:black";
+                document.getElementById("rpwd").type="password";
+                document.getElementById("rpwd").value="";
+                
+            }
+        </script>
+    </body>
+</html>

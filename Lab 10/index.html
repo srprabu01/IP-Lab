@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form>
+            ID<input type="number" id="rollno" ><br><br>
+            <input type="button" name="Submit" value="Submit" onclick="loadDoc()">
+        </form>
+        <div id="demo"></div>
+        
+        <script>
+            function loadDoc() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                  var xmlDoc=this.responseXML;
+                  console.log(xmlDoc);
+                  myFunction(xmlDoc);
+                  }
+                };
+                xhttp.open("GET", "user.xml", true);
+                xhttp.send();
+            }
+            function myFunction(xmlDoc) {
+                  var i;
+                  var table="<table border='1'><tr><th>ID</th><th>NAME</th><th>MAILID</th></tr>";
+                  var x = xmlDoc.getElementsByTagName("user");
+                  console.log(x.length);
+                    for (i = 0; i <x.length; i++) {
+                        if(document.getElementById("rollno").value===x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue)
+                        {
+                            table += "<tr><td> " +
+                            x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue+" </td><td> "+
+                            x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue+" </td><td> "+
+                            x[i].getElementsByTagName("mail")[0].childNodes[0].nodeValue+" </td></tr>";
+                        }
+                    }
+                    document.getElementById("demo").innerHTML = table+"</table>";
+
+            }
+        </script>
+    </body>
+    
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>MCQ</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .container{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+            }
+            body{
+                background-color: rgb(131, 209, 243);
+            }
+            h1{
+                text-align: center;
+            }
+
+            form{
+                border: 3px double;
+                width: 80vw;
+                margin-left: 3vw;
+                padding: 2%;
+                background-color: rgb(7, 249, 189);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Online MCQ Test</h1>
+            <form action="http://localhost:8080/MCQ/MCQServlet" method="post">
+            Name<input type="text" name="name"><br><br>
+            
+            RollNo <input type="text" name="rollno"><br><br>
+            
+            <ol>
+                <li>
+                    Servlet is a Server side Programming<br><br>
+                    <input type="radio" name="q1" value="True" required>True
+                    <input type="radio" name="q1" value="False">False
+                    <br><br>
+                </li>
+                              
+                <li>
+                    What specification defines an application programming interface for communication between
+                    the server and the application program?<br><br>
+                    <input type="text" name="q2" required>
+                    <br><br>
+                </li>
+                
+                <li>
+                    JSP is a ________<br><br>
+                    <input type="radio" name="q3" value="Server" required>Server Side Scripting Language<br>
+                    <input type="radio" name="q3" value="Client">Client Side Scripting Language
+                    <br><br>
+                </li>
+                
+                <li>
+                    Check out the Session tracking techniques<br><br>
+                        <input type="checkbox" name="q4" value="Cookies">Cookies<br>
+                        <input type="checkbox" name="q4" value="History">History<br>
+                        <input type="checkbox" name="q4" value="HttpSession">HttpSession<br>
+                    <br><br>
+                </li>
+                
+                <li>
+                    Select the packages in which JDBC classes are defined. <br><br>
+                    <input type="radio" name="q5" value="option1" required>jdbc and javax.jdbc<br>
+                    <input type="radio" name="q5" value="option2">rdb and javax.rdb<br>
+                    <input type="radio" name="q5" value="option3">jdbc and java.jdbc.sql<br>
+                    <input type="radio" name="q5" value="option4">sql and javax.sql
+                    <br><br>
+                </li>        
+            </ol>
+         
+            <input type="submit" value="submit">
+        </form>
+        </div>
+    </body>
+</html>
